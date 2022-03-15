@@ -8342,9 +8342,6 @@ body {
 .footer-row {
   row-gap: 2rem; }
 
-.footer .was-validated:invalid .footer-form-error-icon {
-  display: block; }
-
 .footer .form .row {
   row-gap: 0.5rem; }
 
@@ -8356,14 +8353,8 @@ body {
   position: relative;
   background-color: #fa5757; }
 
-.footer .form .footer-form-error-icon {
-  display: none;
-  position: absolute;
-  top: 20%;
-  right: 5%; }
-
 .footer .form .invalid-feedback {
   font-size: 0.7rem; }
 
-.footer .form-control.is-valid, .footer .was-validated .form-control:valid {
-  background-image: none !important; }
+.footer .was-validated .form-control:invalid {
+  background-image: url("../../../images/icon-error.svg") !important; }

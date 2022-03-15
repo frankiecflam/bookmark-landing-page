@@ -128,12 +128,6 @@
         row-gap: 2rem;
     }
 
-    .was-validated:invalid {
-        .footer-form-error-icon {
-            display: block;
-        }
-    }
-
     .form {
         .row {
             row-gap: 0.5rem;
@@ -150,20 +144,12 @@
             position: relative;
             background-color: hsl(0, 94%, 66%);
         }
-
-        .footer-form-error-icon {
-            display: none;
-            position: absolute;
-            top: 20%;
-            right: 5%;
-        }
-
         .invalid-feedback {
             font-size: 0.7rem;
         }
     }
 
-    .form-control.is-valid, .was-validated .form-control:valid {
-        background-image: none !important;
+    .was-validated .form-control:invalid {
+        background-image: url("../../../images/icon-error.svg") !important;
     }
 }
