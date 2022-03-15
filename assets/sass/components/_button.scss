@@ -1,0 +1,40 @@
+@import "../utilities/variables";
+
+.btn-login {
+    padding: 0.5rem 2rem;
+    background-color: $color-contrast !important;
+    color: white !important;
+    text-transform: uppercase;
+}
+.btn-custom-dominant {
+    padding: 0.5rem 2rem;
+    color: white !important;
+    background-color: $color-dominant !important;
+}
+
+.btn-custom-contrast {
+    padding: 0.5rem 2rem;
+    color: white !important;
+    background-color: $color-contrast !important;
+}
+
+.btn-custom-secondary {
+    padding: 0.5rem 2rem;
+    color: $color-neutral-2 !important;
+    background-color: rgba($color-neutral-1, 0.1) !important;
+}
+
+.btn-custom-dominant, .btn-custom-secondary, .btn-custom-contrast {
+    box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.2);
+    transition: all 0.4s;
+
+    &:hover {
+        transform: translateY(-0.35rem);
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+    }
+
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.35rem 1rem rgba(0,0,0,0.2);
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "bookmark-landing-page-master",
+  "version": "1.0.0",
+  "description": "This is a coding challenge from Frontend mentor. The main purpose of coding this website is to practise my Bootstrap 5 skills.",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass assets/sass/custom.scss assets/css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+
+    "compile:sass": "node-sass assets/sass/custom.scss assets/css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' assets/css/style.comp.css -o assets/css/style.prefix.css",
+    "compress:css": "node-sass assets/css/style.prefix.css assets/css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "Frankie Lam",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "node-sass": "^7.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^9.1.0"
+  }
+}

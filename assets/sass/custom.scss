@@ -1,0 +1,35 @@
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Modify existing Bootstrap variables
+
+@import "../../node_modules/bootstrap/scss/variables";
+
+// Custom variables
+$custom-theme-colors: (
+    "dominant": hsl(231, 69%, 60%),
+    "contrast":  hsl(0, 94%, 66%),
+    "neutral-1": hsl(229, 8%, 60%),
+    "neutral-2": hsl(229, 31%, 21%)
+);
+
+
+// Merge the variable map
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+$utilities-colors: map-merge($utilities-colors, $theme-colors-rgb);
+$utilities-text: map-merge($utilities-text, $utilities-colors);
+$utilities-text-colors: map-loop($utilities-text, rgba-css-var, "$key", "text");
+$utilities-bg: map-merge($utilities-bg, $utilities-colors);
+$utilities-bg-colors: map-loop($utilities-bg, rgba-css-var, "$key", "bg");
+
+
+
+// Import Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Custom SASS
+@import "../sass/base/base";
+@import "../sass/components/nav";
+@import "../sass/components/button";
+@import "../sass/pages/home";
+@import "../sass/utilities/variables";
